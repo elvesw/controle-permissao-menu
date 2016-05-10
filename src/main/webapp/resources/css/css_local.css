@@ -1,0 +1,44 @@
+@charset "utf-8";
+@import url("btn-modificados.css");
+@import url("componentes-primefaces.css");
+
+body {
+	font-size: 12px !important;
+	font-family: Arial, Helvetica, sans-serif !important;
+	margin: 0px !important;
+	font-weight: normal !important;
+}
+
+header {
+	padding: 5px 0px;
+	margin-bottom: 20px;
+	height: 30px;
+	background-color: #eaf3fa;
+	color: #fff;
+	box-shadow: 0px 2px 2px #ccc;
+}
+.menu-sistema {
+	border: 0px !important;
+	padding: 0px !important;
+	background: none !important;
+}
+
+/* ##### COR DE ICONES Font Awesome######## */
+.fa.branco:before {
+   color: white !important;
+}
+.fa.preto:before  {
+   color: black !important;
+}
+.fa.vermelho:before {
+   color: red !important;
+}
+.fa.cor-verde:before{
+	color: #00FF33 !important;
+}
+.fa.azul:before {
+   color: blue !important;
+}
+.fa.laranja:before {
+   color: #ff8000 !important;
+}

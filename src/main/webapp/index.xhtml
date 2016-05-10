@@ -1,0 +1,42 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	template="/WEB-INF/template/LayoutPrincipal.xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+	<h:head>
+		<ui:define name="titulo">INDEX</ui:define>
+	</h:head>
+
+	<ui:define name="corpo">
+	 <!-- <p:messages autoUpdate="true" closable="true"  /> -->
+		  <h:form>
+            <p:panel header="Controle de Permissões" style="margin-top: 10px; width:500px;">
+                <h:panelGrid columns="2">
+                    <h:selectOneMenu value="#{permissaoBean.usuarioSelecionado.id}">
+                        <f:selectItem itemValue="0" itemLabel=""/>
+                        <f:selectItems value="#{permissaoBean.listaUsuario}" var="usuario"
+                                       itemValue="#{usuario.id}" itemLabel="#{usuario.login}"/>
+                        <p:ajax event="change" listener="#{permissaoBean.carregaPermissoesUsuario}"   update="panelPermissoes"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+            </p:panel>
+            <p:panel id="panelPermissoes" style="margin-top: 10px; margin-bottom: 10px; width:500px;">
+                <p:messages id="msg" autoUpdate="true" closable="true"  />
+                <p:tree value="#{permissaoBean.root}" selectionMode="checkbox" var="no" id="docs"
+                        expanded="true" expandAnim="FADE_IN" collapseAnim="FADE_OUT"
+                        selection="#{permissaoBean.nosSelecionados}" propagateSelectionUp="true" propagateSelectionDown="true"> 
+                    <p:treeNode>
+                        <h:outputText value="#{no.descricao}" style="margin-left: 10px;"/>
+                    </p:treeNode>
+                </p:tree>
+           <p:contextMenu for="docs">
+        		<p:menuitem value="Ver" actionListener="#{permissaoBean.verNodesSelecionados}" icon="ui-icon-search" />
+   		 </p:contextMenu>
+            </p:panel>
+            <p:commandButton value="Salvar" action="#{permissaoBean.salvaPermissoes}" update="panelPermissoes"/>
+        </h:form>
+	</ui:define>
+
+</ui:composition>

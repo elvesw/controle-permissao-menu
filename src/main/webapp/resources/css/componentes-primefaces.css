@@ -1,0 +1,77 @@
+/* MODIFICAÇÕES EM COMPONENTES DO PRIMEFACES */
+/* USANDO O THEMA BOOTSTRAP */
+
+/* diminuindo um pouco o espaçamento das celulas do datatable*/
+.ui-datatable thead th, .ui-datatable tbody td, .ui-datatable tfoot td, .ui-datatable tfoot th {
+    padding: 1px 3px !important;
+}
+
+.ui-column-filter {
+    display: inline !important; /* Texto da coluna filter input no datatable da pesquisa na mesma linha */
+}
+.ui-column-customfilter{
+	display: inline-block !important; /* Texto da coluna filter SeelectOnemenu no datatable da pesquisa na mesma linha */
+}
+/* RESOLVER AQUELE PROBLEMA DO SelectOneMenu do Primefaces*/
+.ui-selectonemenu .ui-selectonemenu-label {
+    overflow: visible ;
+}
+
+/* cor dos botoes do menu em hover */
+.ui-menu.ui-widget li > .ui-menuitem-link.ui-state-hover {
+    background-color:#2aabd2 !important;
+    background-image: linear-gradient(to bottom, #5bc0de,#2aabd2) !important;
+    -moz-border-radius:3px !important;
+	-webkit-border-radius:3px !important;
+	border-radius:3px !important;
+}
+
+/* Cor do item selecionado no selectOnemenu */
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
+    background-color:#2aabd2 !important;
+    background-image: linear-gradient(to bottom, #5bc0de,#2aabd2) !important;
+    color: #ffffff  !important;
+}
+
+/* Força borda vermelha quando der erro nos inputs*/
+.ui-state-error {
+	border: 1px solid #cd0a0a !important;
+	color: #333333 !important;
+}
+
+/* Customiza TabView - início */
+ .ui-tabs-nav .ui-state-active a:link { /* propriedades da aba selecionada */
+ 	background-color: #2aabd2 !important;
+    color: #fff !important;
+   text-shadow:none !important;
+   font-weight: bold !important;
+}
+.ui-tabs-nav .ui-state-default{ /* propriedades da aba padrão */
+	 background-color:  #edf9fc !important;
+}
+.ui-tabs-nav .ui-state-hover{ /* propriedades da aba  em hover*/
+	 background-color: #fff !important;
+}
+
+.ui-tabs .ui-tabs-panel {
+    padding: 0.5em 0.2em !important;
+}
+.ui-tabs {
+    padding: 0px !important;
+}
+.ui-tabs .ui-tabs-nav {
+    margin: -1px !important;
+}
+.ui-tabs.ui-tabs-top > .ui-tabs-nav {
+    padding: 0px !important;
+}
+/* Customiza TabView - fim */
+
+/* Margem das mensagem */
+.ui-messages-info, .ui-messages-warn, .ui-messages-error, .ui-messages-fatal {
+    margin: 1px 0 !important;
+    padding: 5px !important;
+}
+.ui-datatable .ui-datatable-data tr:hover { /* destaca linha selecionada datatable*/
+	background: #edf9fc;
+}

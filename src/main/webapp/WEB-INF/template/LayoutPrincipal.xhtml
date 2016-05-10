@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="author" content="Dev" />
+	<title><ui:insert name="titulo">Sistema Template</ui:insert></title>
+	<link rel="shortcut icon" href="#{request.contextPath}/resources/img/favicon.ico" type="image/x-icon" />
+	<h:outputScript library="js" name="javascript_local.js" />
+	<h:outputScript library="js" name="jquery.maskMoney.js" />
+	<link rel="stylesheet" type="text/css" href="#{request.contextPath}/resources/css/css_local.css" />
+</h:head>
+
+<h:body>
+	<header style="min-width: 1020px; max-width: 80%; margin: auto;">
+			<div style="float: left">
+				<h:link outcome="/index.jsf">
+					<h:graphicImage library="img" name="logo.png" />
+				</h:link>
+			</div>
+			<div style="float: right; margin-right: 50px;">
+
+			</div>
+
+			<div style="clear: both"></div>
+
+	</header>
+
+	<div align="center">
+		<br />
+
+		<br />
+		<div align="left"
+			style="min-width: 1020px; max-width: 80%; min-height: 600px;">
+			<ui:insert name="corpo" />
+		</div>
+	</div>
+
+	<footer>
+		<div align="center">
+			 <a href="https://github.com/elvesw" target="_blank">https://github.com/elvesw</a>
+		</div>
+	</footer>
+	
+	<p:ajaxStatus onstart="PF('statusDialog').show()" id="ajaxStatusCentro" onsuccess="PF('statusDialog').hide()" oncomplete="configurarMoeda()"/>
+	<p:dialog header="Aguarde..." widgetVar="statusDialog" modal="true"
+		draggable="false" closable="false" resizable="false" showHeader="true">
+		<h:graphicImage name="ajaxloadingbar.gif" library="img" id="barra_status" />
+	</p:dialog>
+</h:body>
+</html>
